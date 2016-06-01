@@ -8,4 +8,8 @@ I like to have the full texts of items in my own local directory (which is calle
 
 Download zotero-babel.xpi. In Zotero stand alone choose 'Tools' -> 'Add-ons' -> 'Extensions' -> 'Install add-on from file…'. Select the downloaded file. Set the base directory for your library via the Zotero Preferences menu -> 'Advanced' -> 'Open about:config' and adjust the value of the zotero-babel.path preference as appropriate.
 
+#### Notes
+
+<small>
 1) This defaults to /Path/To/Babel, you can change this value in defaults.js or via the Zotero Preferences menu -> 'Advanced' -> 'Open about:config' and changing the value of the zotero-babel.path preference.
+</small>
