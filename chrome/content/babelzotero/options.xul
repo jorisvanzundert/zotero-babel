@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<prefwindow id="babelzotero-prefs"
+     title="Babel Options"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<prefpane id="babelzotero-base-pane" label="Babel Path Settings">
+  <preferences>
+    <preference id="zotero-babel.path" name="zotero-babel.path" type="string"/>
+  </preferences>
+
+  <hbox align="center">
+    <label control="zotero-babel-field" value="Path to Babel: "/>
+    <textbox preference="zotero-babel.path" id="zotero-babel-field" maxlength="180"/>
+  </hbox>
+</prefpane>
+
+</prefwindow>

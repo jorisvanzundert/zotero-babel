@@ -1,0 +1,5 @@
+content	babelzotero				chrome/content/babelzotero/
+locale	babelzotero	en-US		chrome/locale/en-US/babelzotero/
+skin	babelzotero	default		chrome/skin/default/babelzotero/
+
+overlay	chrome://zotero/content/zoteroPane.xul	chrome://babelzotero/content/overlay.xul

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://babelzotero/skin/overlay.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://babelzotero/locale/babel.dtd">
+
+<overlay id="babelzotero-overlay"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="babel-zotero-strings"
+			src="chrome://babel/locale/babel.properties"/>
+	</stringbundleset>
+
+	<menupopup id="zotero-itemmenu">
+		<menuitem label="&babelzotero.createdir;"
+			oncommand="Zotero.BabelZotero.create_dir()"/>
+			<menuitem label="&babelzotero.createstub;"
+				oncommand="Zotero.BabelZotero.create_dir( true )"/>
+	</menupopup>
+
+	<!-- Include the main extension logic -->
+	<script src="chrome://zotero/content/include.js"/>
+	<script src="chrome://babelzotero/content/include.js" type="application/javascript;version=1.8"/>
+</overlay>
