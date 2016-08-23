@@ -71,14 +71,16 @@ Zotero.BabelZotero = {
 						path_to_file.append( "Summary_" + title + ".txt" );
 						if ( !path_to_file.exists() ) {
 							path_to_file.create( path_to_file.NORMAL_FILE_TYPE, 0750 );
-						}
-						var qc = Zotero.QuickCopy.getContentFromItems( items, "bibliography=http://www.zotero.org/styles/elsevier-harvard" );
-						var foStream = Components.classes["@mozilla.org/network/file-output-stream;1"].createInstance( Components.interfaces.nsIFileOutputStream );
-						foStream.init( path_to_file, 0x02 | 0x08 | 0x20, 0666, 0);
-						var converter = Components.classes["@mozilla.org/intl/converter-output-stream;1"].createInstance( Components.interfaces.nsIConverterOutputStream );
-						converter.init( foStream, "UTF-8", 0, 0 );
-						converter.writeString( "## Summary\n\n> " + qc.text );
-						converter.close();
+  						var qc = Zotero.QuickCopy.getContentFromItems( items, "bibliography=http://www.zotero.org/styles/elsevier-harvard" );
+  						var foStream = Components.classes["@mozilla.org/network/file-output-stream;1"].createInstance( Components.interfaces.nsIFileOutputStream );
+  						foStream.init( path_to_file, 0x02 | 0x08 | 0x20, 0666, 0);
+  						var converter = Components.classes["@mozilla.org/intl/converter-output-stream;1"].createInstance( Components.interfaces.nsIConverterOutputStream );
+  						converter.init( foStream, "UTF-8", 0, 0 );
+  						converter.writeString( "## Summary\n\n> " + qc.text );
+  						converter.close();
+					  } else {
+					    alert( "Cannot overwrite an existing summary..." );
+					  }
 					};
 					path_to_file.reveal();
 				}
