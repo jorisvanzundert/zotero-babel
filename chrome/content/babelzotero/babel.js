@@ -27,6 +27,9 @@ Zotero.BabelZotero = {
 		var sanitize = function( str ) {
 			return str.trim().replace(/[^\S ]|[\(\)\{\}\[\]\*\?\.\^\|\\\/!:;"'<>&%$#@]/g, "-");
 		}
+		var sanitize_except_period = function( str ) {
+			return str.trim().replace(/[^\S ]|[\(\)\{\}\[\]\*\?\^\|\\\/!:;"'<>&%$#@]/g, "-");
+		}
 		var guard_length = function( str ) {
 			if ( str.length > 30 ) {
 				var str = str.substring(0,29);
@@ -56,7 +59,7 @@ Zotero.BabelZotero = {
 				var author_node = "anonymous";
 				if ( item.getCreators()[0] != null ) {
 					var creator = item.getCreators()[0].ref;
-				  author_node = guard_length( sanitize( creator.lastName ) + ", " + sanitize( creator.firstName ) );
+				  author_node = guard_length( sanitize_except_period( creator.lastName ) + ", " + sanitize_except_period( creator.firstName ) );
 				}
 				var path_to_file = guard_writable( this.base_dir );
 				if ( path_to_file != null ) {
