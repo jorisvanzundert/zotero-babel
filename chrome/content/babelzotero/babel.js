@@ -81,6 +81,7 @@ Zotero.BabelZotero = {
   						converter.init( foStream, "UTF-8", 0, 0 );
   						converter.writeString( "## Summary\n\n> " + qc.text );
   						converter.close();
+							Zotero.Attachments.linkFromFile( path_to_file, item.itemID )
 					  } else {
 					    alert( "Cannot overwrite an existing summary..." );
 					  }
