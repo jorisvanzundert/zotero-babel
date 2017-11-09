@@ -53,12 +53,24 @@ Zotero.BabelZotero = {
 		try {
 			var items = Zotero.getActiveZoteroPane().getSelectedItems();
 			var item = items[0];
+			/*
+			Beware of Zotero's peculiar ways of offering item data to you, examples that work:
+					alert( item.getField('title') );
+					alert( item.getCreators().length );
+					alert( item.getCreators()[0].lastName );
+					alert( item.getField('firstCreator') );
+					my_item = Zotero.Items.get( item.itemID );
+					alert( JSON.stringify( my_item) );
+			Useful sources to scout:
+			https://github.com/zotero/zotero/blob/master/test/tests/itemTest.js
+			https://github.com/zotero/zotero/blob/master/chrome/content/zotero/zoteroPane.js
+			*/
 			if ( item.isRegularItem() ) {
 				var title = guard_length( sanitize( item.getDisplayTitle() ) );
 				if ( title == "" ) { title = "no title" };
 				var author_node = "anonymous";
 				if ( item.getCreators()[0] != null ) {
-					var creator = item.getCreators()[0].ref;
+					var creator = item.getCreators()[0];
 				  author_node = guard_length( sanitize_except_period( creator.lastName ) + ", " + sanitize_except_period( creator.firstName ) );
 				}
 				var path_to_file = guard_writable( this.base_dir );
