@@ -83,7 +83,7 @@ Zotero.BabelZotero = {
 					}
 					if ( stub == true ) {
 						path_to_file.append( "Summary" );
-						path_to_file.append( "Summary_" + title + ".txt" );
+						path_to_file.append( "Summary_" + title + ".md" );
 						if ( !path_to_file.exists() ) {
 							path_to_file.create( path_to_file.NORMAL_FILE_TYPE, 0750 );
   						var qc = Zotero.QuickCopy.getContentFromItems( items, Zotero.Prefs.get("export.quickCopy.setting") );
