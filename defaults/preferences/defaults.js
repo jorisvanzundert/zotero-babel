@@ -1,1 +1,1 @@
-pref("zotero-babel.path", "/Path/To/Babel");
+pref( 'extensions.zotero.babel.basedir', '/Path/To/Babel' );

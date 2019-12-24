@@ -6,9 +6,9 @@
 		<em:id>babel@zotero.org</em:id>
 		<em:name>Babel Plugin for Zotero</em:name>
 		<em:version>1.0.4.SVN</em:version>
-		<em:description>A sample plugin for Zotero</em:description>
-		<em:creator>Center for History and New Media<br/>George Mason University</em:creator>
-		<em:updateURL>https://www.zotero.org/download/plugins.rdf</em:updateURL>
+		<em:description>A plugin for Zotero to create local attachment folders and summary stubs</em:description>
+		<em:creator>Joris J. van Zundert<br/>Huygems Institute for the History of the Netherlands</em:creator>
+		<em:updateURL>https://github.com/jorisvanzundert/zotero-babel</em:updateURL>
 		<em:type>2</em:type> <!-- type=extension -->
 
 		<!-- Requires Zotero -->

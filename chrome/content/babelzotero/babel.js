@@ -2,28 +2,10 @@ Zotero.BabelZotero = {
 	base_dir: null,
 
 	init: function() {
-		// Register to receive notifications of preference changes
-		// Looking for explanations? See: https://developer.mozilla.org/en-US/Add-ons/Code_snippets/Preferences
-		this.prefs = Components.classes[ "@mozilla.org/preferences-service;1" ]
-				.getService( Components.interfaces.nsIPrefService )
-				.getBranch( "zotero-babel." );
-		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
-		this.prefs.addObserver("", this, false);
-		this.base_dir = this.prefs.getCharPref("path");
-		window.addEventListener('unload', function(e) {
-			this.prefs.removeObserver("", this);
-		}, false);
-	},
-
-	observe: function(subject, topic, data) {
-		if ( topic == "nsPref:changed" ) {
-			if ( data == "path" ) {
-				this.base_dir = this.prefs.getCharPref("path");
-			}
-		}
 	},
 
 	create_dir: function( stub ) {
+		this.base_dir = Zotero.Prefs.get( 'extensions.zotero.babel.basedir', true );
 		var sanitize = function( str ) {
 			return str.trim().replace(/[^\S ]|[\(\)\{\}\[\]\*\?\.\^\|\\\/!:;"'<>&%$#@]/g, "-");
 		}
@@ -38,7 +20,7 @@ Zotero.BabelZotero = {
 		}
 		var guard_writable = function( base_dir ) {
 			var path_nodes = base_dir.split( "/" );
-			var path_to_file = Components.classes["@mozilla.org/file/local;1"].createInstance( Components.interfaces.nsILocalFile );
+			var path_to_file = Components.classes["@mozilla.org/file/local;1"].createInstance( Components.interfaces.nsIFile );
 			path_nodes.forEach( function( node ) {
 			 	path_to_file.append( node );
 			} );
@@ -109,4 +91,4 @@ Zotero.BabelZotero = {
 };
 
 // Initialize the utility
-window.addEventListener('load', function(e) { Zotero.BabelZotero.init(); }, false);
+window.addEventListener( 'load', function(e) { Zotero.BabelZotero.init(); }, false 	);
