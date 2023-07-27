@@ -20,7 +20,7 @@ Download zotero-babel.xpi. In Zotero stand alone choose 'Tools' -> 'Add-ons' -> 
 
 #### Notes
 
-<div style="font-size:70%;">
+<div class="text-small">
 1) This defaults to /Path/To/Babel, you can change this value in defaults.js or via the Zotero Preferences menu -> 'Advanced' -> 'Open about:config' and changing the value of the zotero-babel.path preference. <br/><br/>
 2) This defaults to /Path/To/BabelDropDir, you can change this value in defaults.js or via the Zotero Preferences menu -> 'Advanced' -> 'Open about:config' and changing the value of the zotero-babel.path preference.
 </div>
