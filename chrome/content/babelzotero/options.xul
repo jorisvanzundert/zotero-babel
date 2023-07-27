@@ -6,14 +6,22 @@
      xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 <prefpane id="babelzotero-base-pane" label="Babel Path Settings">
+  
   <preferences>
     <preference id="zotero-babel.path" name="zotero-babel.path" type="string"/>
+    <preference id="zotero-babel.droppath" name="zotero-babel.droppath" type="string"/>
   </preferences>
 
   <hbox align="center">
-    <label control="zotero-babel-field" value="Path to Babel: "/>
-    <textbox preference="zotero-babel.path" id="zotero-babel-field" maxlength="180"/>
+    <label control="zotero-babelpath-field" value="Path to Babel: "/>
+    <textbox preference="zotero-babel.path" id="zotero-babelpath-field" maxlength="180"/>
   </hbox>
+
+  <hbox>
+    <label control="zotero-babeldroppath-field" value="Drop path for Babel: "/>
+    <textbox preference="zotero-babel.droppath" id="zotero-babeldroppath-field" maxlength="180"/>
+  </hbox>
+
 </prefpane>
 
 </prefwindow>

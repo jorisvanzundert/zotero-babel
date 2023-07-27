@@ -11,10 +11,13 @@
 	</stringbundleset>
 
 	<menupopup id="zotero-itemmenu">
+		<menuseparator />
+		<menuitem label="&babelzotero.createfromdrop;"
+			oncommand="Zotero.BabelZotero.create_from_drop()"/>
 		<menuitem label="&babelzotero.createdir;"
 			oncommand="Zotero.BabelZotero.create_dir()"/>
-			<menuitem label="&babelzotero.createstub;"
-				oncommand="Zotero.BabelZotero.create_dir( true )"/>
+		<menuitem label="&babelzotero.createstub;"
+			oncommand="Zotero.BabelZotero.create_stub()"/>
 	</menupopup>
 
 	<!-- Include the main extension logic -->
